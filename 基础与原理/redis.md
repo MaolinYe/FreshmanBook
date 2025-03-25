@@ -86,7 +86,7 @@ redis本身是key-value数据库，key-value的数据结构是哈希查找表，
 
 #### 跳表
 
-多层有序链表
+跳表
 
 #### quicklist
 
