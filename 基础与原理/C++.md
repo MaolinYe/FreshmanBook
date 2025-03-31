@@ -254,6 +254,12 @@ Java有垃圾回收机制可以自动回收无用内存，C++则要通过智能�
 
 ### new delete malloc free
 
+#### malloc
+
+小于512KB，brk调整分配的堆末尾
+
+mmap分配大块内存
+
 #### 区别
 
 new和delete是C++的运算符，malloc和free是C的标准库里面的函数，malloc和free用来分配和释放内存，new和delete除了完成分配和释放内存还会自动调用对象的构造函数和析构函数

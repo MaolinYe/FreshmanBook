@@ -110,59 +110,17 @@ UTF-8 动态编码，英文用 1 个字节表示，中文用三个字节表示
 
 #### 字符
 
-int32类型来的，go没有char
+##### byte
 
-字符串实际是byte数组，byte是uint8
+uint8，存储ASCII字符
 
-中文示例
+##### rune
 
-```go
-	str:="中午"
-	for i,c:=range str{
-		fmt.Println(i,c)
-	}
-	for i:=0;i<len(str);i++{
-		fmt.Println(str[i])
-	}
-```
-
-输出
-
-> 0 20013
-> 3 21320
-> 228
-> 184
-> 173
-> 229
-> 141
-> 136
-
-换成英文
-
-```go
-	str:="abcd"
-	for i,c:=range str{
-		fmt.Println(i,c)
-	}
-	for i:=0;i<len(str);i++{
-		fmt.Println(str[i])
-	}
-```
-
-输出
-
-> 0 97
-> 1 98
-> 2 99
-> 3 100
-> 97
-> 98
-> 99
-> 100
+int32，存储Unicode字符
 
 ### 切片
 
-数组就是一片连续的内存， slice 是一个结构体，包含三个字段：长度、容量、底层数组指针，8+8+8字节
+数组就是一片连续的固定长度内存， slice 是一个结构体，包含三个字段：长度、容量、底层数组指针，8+8+8字节
 
 ```go
 type slice struct {
